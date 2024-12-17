@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Archive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1e1e1e;
+            padding: 10px 20px;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        header nav a:hover {
+            color: #f0a500;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .game {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .ranking {
+            background-color: #292929;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .ranking h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #f0a500;
+        }
+        .ranking ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+            color: white;
+        }
+        .ranking ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Game Archive</div>
+        <nav>
+            <a href="#">자유 게시판</a>
+            <a href="#">질문 게시판</a>
+            <a href="#">랭킹 시스템</a>
+            <a href="#">건의 게시판</a>
+            <a href="#">포인트 샵</a>
+        </nav>
+    </header>
+    <main>
+        <section class="game-grid">
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 1">
+                <p>Game 1</p>
+            </div>
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 2">
+                <p>Game 2</p>
+            </div>
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 3">
+                <p>Game 3</p>
+            </div>
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 4">
+                <p>Game 4</p>
+            </div>
+        </section>
+        <section class="ranking">
+            <h2>Top Scores</h2>
+            <ul>
+                <li>1st: Player1 - 1000pts</li>
+                <li>2nd: Player2 - 900pts</li>
+                <li>3rd: Player3 - 850pts</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

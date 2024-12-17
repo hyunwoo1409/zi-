@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat&Play</title>
+</head>
+<link rel="stylesheet" href="사이트.css">
+<script src="js/사이트.js"></script>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="/게시판 만들기/img/KakaoTalk_20241212_213614010.png" alt="로고 이미지">
+            <nav>
+                <a href="#">게임</a>
+                <a href="#">랭킹 보드</a>
+                <a href="#">도전 과제</a>
+                <a href="#">자유 게시판</a>
+                <a href="#">포인트 샵</a>
+            </nav>
+        </div>
+        <div class="login">
+            <a href="#">로그인</a>
+            <span>/</span>
+            <a href="#">회원가입</a>
+        </div>
+    </header>
+    <main>
+        <section class="game-grid">
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 1">
+                <p>Game 1</p>
+                <div class="top-scores">
+                    <h3>Top Scores</h3>
+                    <ul>
+                        <li>1st: 1000pts</li>
+                        <li>2nd: 900pts</li>
+                        <li>3rd: 850pts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 2">
+                <p>Game 2</p>
+                <div class="top-scores">
+                    <h3>Top Scores</h3>
+                    <ul>
+                        <li>1st: 950pts</li>
+                        <li>2nd: 850pts</li>
+                        <li>3rd: 800pts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 3">
+                <p>Game 3</p>
+                <div class="top-scores">
+                    <h3>Top Scores</h3>
+                    <ul>
+                        <li>1st: 900pts</li>
+                        <li>2nd: 870pts</li>
+                        <li>3rd: 860pts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game">
+                <img src="https://via.placeholder.com/250x150" alt="Game 4">
+                <p>Game 4</p>
+                <div class="top-scores">
+                    <h3>Top Scores</h3>
+                    <ul>
+                        <li>1st: 920pts</li>
+                        <li>2nd: 910pts</li>
+                        <li>3rd: 890pts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 사이드 바 -->
+        <div class="sidebar">
+            <button id="toggleButton" class="plus-button">+</button>
+            <div id="arrowButtons" class="arrow-buttons hidden">
+                <button id="upButton" class="arrow-button">▲</button>
+                <button id="chatButton" class="chat-button">💬</button>
+                <button id="downButton" class="arrow-button">▼</button>
+                <button id="closeButton" class="close-button">×</button>
+            </div>
+        </div>
+        <!-- 채팅 화면면 -->
+        <div id="chatWindow" class="chat-window hidden">
+            <div class="chat-header">
+                <h4>채팅</h4>
+                <button id="closeChatButton" class="close-button">×</button>
+            </div>
+            <div class="chat-body">
+                <p>안녕하세요! 무엇을 도와드릴까요?</p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="메시지를 입력하세요...">
+                <button id="sendButton" class="send-button">전송</button>
+            </div>
+        </div>
+        <!-- 게임 리뷰 -->
+        <section class="reviews">
+            <h2>게임 리뷰</h2>
+            <div class="reviews-background">
+                <div class="review-container">
+                    <div class="review">
+                        <p>재밌습니다. 내용도 좋고 픽셀 그래픽도 좋았네요. 간만에 아기자기한 게임으로 스트레스 없이 플레이 해보니 좋았습니다.</p>
+                        <div class="reviewer">
+                            <img src="https://via.placeholder.com/50" alt="프로필 이미지">
+                            <span>STOVE11 | 9시간 5분 플레이</span>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <p>러닝타임 8시간짜리 어린이만화(개인적으로는 통과제리 1992 극장판 느낌)인 만큼 많은 재미가 있었습니다!</p>
+                        <div class="reviewer">
+                            <img src="https://via.placeholder.com/50" alt="프로필 이미지">
+                            <span>강고양이 | 6시간 1분 플레이</span>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <p>무난하게 재밌는 포인트 앤 클릭 추리 어드벤처. 공들인 픽셀 그래픽과 몰입감 덕에 시간이 금방 갔어요.</p>
+                        <div class="reviewer">
+                            <img src="https://via.placeholder.com/50" alt="프로필 이미지">
+                            <span>STOVE11 | 10시간 27분 플레이</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <p>공지사항: 새로운 클라이언트 이용 가이드 안내</p>
+            <nav>
+                <a href="#">회사소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">청소년보호정책</a>
+                <a href="#">운영정책</a>
+                <a href="#">게임시간선택제</a>
+                <a href="#">고객센터</a>
+            </nav>
+        </div>
+        <div class="footer-info">
+            <p>
+                ㈜zi존코딩딩 역삼삼지점 <br> 권대성 김찬열 김세하 강현우
+                주소: 강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F<br>
+                강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                사업자 등록번호: 851-87-00622 <br>
+                대표번호: 1670-0399 팩스: 02-6020-8213 E-mail: zizoncoding@kh.com<br>
+                <a href="#">사업자정보확인</a>
+            </p>
+            <div class="footer-logo">
+                <img src="img/팀 로고.webp" alt="smileGate 로고">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

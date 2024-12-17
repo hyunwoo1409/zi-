@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background-color: #f9f9f9; 
+    color: #333; 
+}
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0px;
+    z-index: 900;
+    border-bottom: 1px solid #ddd;
+}
+/* 로고 이미지 */
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+header .logo img {
+    max-width: 100px;
+    height: auto;
+}
+/* 메인 텍스트 */
+header nav {
+    display: flex;
+    gap: 15px;
+}
+header nav a {
+    color: #333; 
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header nav a:hover {
+    color: #f0a500; 
+}
+/* 로그인/회원가입 */
+.login {
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
+.login span{
+    color: #f0a500;
+}
+.login a {
+    color: #f0a500;
+    text-decoration: none;
+}
