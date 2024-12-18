@@ -1,4 +1,16 @@
+@font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+
+}
 body {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+
     margin: 0;
     background-color: #f9f9f9; 
     color: #333; 
@@ -49,12 +61,11 @@ header nav a:hover {
     color: white;
     font-weight: bold;
 }
-.login span{
-    color: #f0a500;
-}
+
 .login a {
     color: #f0a500;
     text-decoration: none;
+    padding: 7px;
 }
 main {
     max-width: 1200px;
@@ -182,7 +193,7 @@ main {
 .footer {
     background-color: #1e1e1e; 
     color: #ccc;
-    font-size: 0.9em;
+    font-size: 0.5em;
     padding: 10px 20px;
     margin-top: 20px;
 }
@@ -209,49 +220,52 @@ main {
 .footer-top nav a {
     color: #ccc;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.6em;
 }
 
 .footer-top nav a:hover {
     color: #f0a500;
 }
 
-.footer-info {
-    display: flex; 
-    justify-content: space-between; 
+.footer-content {
+    display: flex;
+    justify-content: center; 
     align-items: center; 
-    line-height: 1.5;
-    padding-top: 10px;
-}
-
-.footer-info p {
-    margin: 10px 0;
-    color: #aaa;
-}
-
-.footer-info a {
-    color: #f0a500;
-    text-decoration: none;
-    
-}
-
-.footer-info a:hover {
-    text-decoration: underline;
+    gap: 40px; 
+    position: relative; 
 }
 
 .footer-logo {
-    text-align: right;
+    max-width: 100px; 
+    height: auto;
+    margin: 0 auto; 
+    display: block;
 }
 
-.footer-logo img {
-    max-width: 100px;
-    height: auto;
+.footer-text {
+    text-align: reft;
+    position: absolute; 
+    right: 0;
+    max-width: 50%; 
+}
+
+.footer-text p {
+    margin: 5px 0;
+}
+
+.footer-text a {
+    color: #f0a500;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
 }
 
 /* 사이드바 up/down */
 .sidebar {
     position: fixed;
-    bottom: 40px;
+    bottom: 120px;
     right: 40px;
     display: flex;
     flex-direction: column;
