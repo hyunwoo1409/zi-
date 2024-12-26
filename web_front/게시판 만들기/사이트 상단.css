@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+
+}
+body {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+
+    margin: 0;
+    background-color: #f9f9f9; 
+    color: #333; 
+}
+
 body {
     margin: 0;
     background-color: #f9f9f9; 
@@ -41,7 +59,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #f0a500; 
+    color: skyblue; 
 }
 /* 로그인/회원가입 */
 .login {
@@ -49,10 +67,14 @@ header nav a:hover {
     color: white;
     font-weight: bold;
 }
-.login span{
-    color: #f0a500;
-}
+
 .login a {
-    color: #f0a500;
+    color: skyblue;
     text-decoration: none;
+    padding: 7px;
+}
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
 }
