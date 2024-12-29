@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat&Play</title>
+</head>
+<link rel="stylesheet" href="포인트샵.css">
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/KakaoTalk_20241212_213614010.png" alt="로고 이미지">
+            <nav>
+                <a href="#">게임</a>
+                <a href="#">랭킹</a>
+                <a href="#">도전과제</a>
+                <a href="#">자유게시판</a>
+                <a href="#">포인트샵</a>
+            </nav>
+        </div>
+        <div class="login">
+            <div class="login">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>포인트샵</h1>
+        <hr class="divider">
+        <!-- 포인트 이미지 -->
+        <div class="shop-grid">
+            
+        </div>
+
+        <!-- 팝업 창 -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>거래 제안</h2>
+                    <button class="close-modal" id="closeModal">X</button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>아이템:</strong> <span id="itemName">아이템 이름</span></p>
+                    <p><strong>가격:</strong> <span id="itemPrice">0</span> 코인</p>
+                    <p><strong>횟수:</strong> <input type="number" id="itemQuantity" value="1" min="1"></p>
+                    <p><strong>총:</strong> <span id="totalPrice">0</span> 코인</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeModalFooter">닫기</button>
+                    <button id="purchaseItem">구매</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단 페이지 수 -->
+        <div class="step">
+            <button class="prev-btn">이전</button>
+            <span class="page-indicator">1 / 2</span>
+            <button class="next-btn">다음</button>
+        </div>
+    </main>
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <p>공지사항: 새로운 클라이언트 이용 가이드 안내</p>
+            <nav>
+                <a href="#">회사소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">청소년보호정책</a>
+                <a href="#">운영정책</a>
+                <a href="#">게임시간선택제</a>
+                <a href="#">고객센터</a>
+            </nav>
+        </div>
+        <div class="footer-content">
+            <img src="img/팀 로고.webp" alt="smileGate 로고" class="footer-logo">
+            <div class="footer-text">
+                <p>
+                    ㈜zi존코딩 역삼삼지점 <br> 권대성 김찬열 김세하 강현우 <br>
+                    주소: 강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9  <br>
+                    사업자 등록번호: 851-87-00622 <br>
+                    대표번호: 1670-0399 팩스: 02-6020-8213 E-mail: zizoncoding@kh.com<br>
+                    <a href="#">사업자정보확인</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="포인트샵.js"></script>
+    </body>
+
+</html>

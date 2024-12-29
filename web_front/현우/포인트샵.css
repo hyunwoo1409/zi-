@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+
+}
+body {
+    margin: 0;
+    background-color: #f9f9f9; 
+    color: #333; 
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0px;
+    z-index: 900;
+    border-bottom: 1px solid #ddd;
+}
+/* 로고 이미지 */
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+header .logo img {
+    max-width: 100px;
+    height: auto;
+}
+/* 메인 텍스트 */
+header nav {
+    display: flex;
+    gap: 15px;
+}
+header nav a {
+    color: #333; 
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header nav a:hover {
+    color: skyblue; 
+}
+/* 로그인/회원가입 */
+.login {
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
+
+.login a {
+    color: skyblue;
+    text-decoration: none;
+    padding: 7px;
+}
+
+/* 메인 */
+main {
+    flex: 1;
+    margin: 60px ; 
+    padding: 20px 40px; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px; 
+    text-align: left;
+    color: #333;
+}
+
+.divider {
+    border: none;
+    border-top: 3px solid black; 
+    margin: 50px 0; 
+    width: 100%; 
+}
+
+/* 포인트샵 */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 30px; 
+    padding: 10px 0; 
+}
+
+.item-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto; 
+    border-radius: 5px; 
+    background-color: #ccc; 
+    position: relative;
+}
+.item-image img {
+    width: 60%;
+    height: auto; 
+    display: block; 
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -30px; /* Tooltip 위치 (이미지 아래) */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0; /* 기본 상태에서 보이지 않음 */
+    pointer-events: none; /* 마우스 이벤트 차단 */
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.item-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-card span {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    background-color: skyblue;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.item-image:hover .tooltip {
+    opacity: 1; 
+}
+
+/* 모달 */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 100px; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.modal {
+    background: #fff;
+    border-radius: 8px;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transform: translateY(-50px); 
+    transition: transform 0.3s ease; 
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.modal-header .close-modal {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+.modal-body input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-footer #purchaseItem {
+    background-color: skyblue;
+    color: white;
+}
+
+.modal-footer #purchaseItem:hover {
+    background-color: deepskyblue;
+}
+
+.modal-footer #closeModalFooter {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modal-footer #closeModalFooter:hover {
+    background-color: #aaa;
+}
+
+/* 페이지 버튼 */
+.step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+.step button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.step button:hover {
+    background-color: deepskyblue;
+}
+
+.step .page-indicator {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* footer */
+.footer {
+    background-color: #1e1e1e; 
+    color: #ccc;
+    font-size: 0.5em;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.footer-top {
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-top p {
+    margin: 0;
+    font-weight: bold;
+    color: skyblue;
+}
+
+.footer-top nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-top nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.6em;
+}
+
+.footer-top nav a:hover {
+    color: skyblue;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
+    position: relative; 
+}
+
+.footer-logo {
+    max-width: 100px; 
+    height: auto;
+    margin: 0 auto; 
+    display: block;
+}
+
+.footer-text {
+    text-align: reft;
+    position: absolute; 
+    right: 0;
+    max-width: 50%; 
+}
+
+.footer-text p {
+    margin: 5px 0;
+}
+
+.footer-text a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
