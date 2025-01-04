@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>약관 동의</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        main{
+            margin: auto;
+        }
+
+        /* header */
+        header{
+            height: 150px;
+            display: flex;
+        }
+
+        header>section:nth-child(1){ flex-basis: 15%};
+        header>section:nth-child(2){ flex-basis: 70%};
+        header>section:nth-child(3){ flex-basis: 15%};
+
+        /* 로고 */
+        #main-logo{
+            height: 150px;
+        }
+
+        header>section:nth-last-of-type(2){
+            margin-top: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fieldset{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        fieldset{
+            width: 50px;
+            margin-top: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <section></section>
+            <section>
+                <a href="/게시판 만들기/메인 사이트.html">
+                    <img src="../img/메인로고.png" alt="메인 로고" id="main-logo">
+                </a>
+            </section>
+            <section></section>
+        </header>
+
+        <div id="fieldset">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" id="all">모두 동의</label>
+                    </li>
+                    <hr id="blackline">
+                    <li>
+                        <label><input type="checkbox" name="agree" id="check1">[Chat&Play]서비스이용약관</label>
+                        <button class="checkContent">>></button>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="agree" id="check2">[Chat&Play]개인정보 수집 및 이용동의</label>
+                        <button class="checkContent">>></button>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="agree">[Chat&Play]광고성 정보 수신동의(선택)</label>
+                        <button class="checkContent">>></button>
+                    </li>
+                    <hr>
+                    <input type="button" id="submitBtn" disabled="disabled" value="동의 후 계속하기">
+                
+                </ul>
+            </fieldset>
+        </div>
+    </main>
+</body>
+</html>
