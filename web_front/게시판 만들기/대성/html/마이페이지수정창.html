@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERSignIn</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+        body{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            width: 1000px;
+            font-weight: bold;
+        }
+        
+        .btnSubmit{
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+        }
+        
+        .btnSubmit button{
+            margin: 5px;
+        }
+
+        button{
+            border: 0;
+            font-weight: bold;
+            background-color: #D9D9D9;
+            border-radius: 8px;
+        }
+        
+        #submitBtn{
+            background-color: #65CCFF;
+            color: white;
+        }
+
+        input{
+            border: 1px solid #ADADAD;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+
+
+        td{
+            padding: 3px;
+        }
+
+        
+    @font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    }
+
+    /* @font-face 이용 */
+    form{
+        font-family: 'NanumSquareAcb';
+        font-size: 30px;
+        margin-bottom: 150px;
+    }
+
+    [type=text],[type=password],[type=tel],[type=email]{
+        width: 400px;
+        height: 40px;
+        font-size: 30px;
+    }
+
+    button{
+        width: 200px;
+        height: 40px;
+        font-size: 27px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 20px;
+    }
+
+    td{
+        padding-bottom: 15px;
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+
+    [type=radio]{
+       scale:2.0;
+       margin-left: 20px;
+       margin-right: 20px;
+    }
+    
+    [type=checkbox]{
+        scale:2.0;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #age{
+        scale:2.0;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #hobbyCheck{
+        width: 300px;
+    }
+
+    #jobCheck{
+        zoom:2;
+    }
+
+    #addressResult, #extraAdd{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #logo{
+        margin-bottom: 100px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        Kakao.init('e1f4e88f1a2ae0857755b12f7859b566');
+    </script>
+    <div>
+        <img src="../../img/KakaoTalk_20241212_213614010.png" alt="" id="logo">
+
+    </div>
+
+    <form id = "myForm">
+        <fieldset>
+            <legend>회원 정보 수정</legend>
+            <table>
+                <tr>
+                    <td width="200px">아이디</td>
+                    <td>
+                        GDHong
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" name="pw" id="pw">
+                    </td>
+                    <td id="checkPw">
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호확인</td>
+                    <td>
+                        <input type="password" name="pw2" id="pw2">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="200px">닉네임</td>
+                    <td>
+                        <input type="text" name="nickname" id="nickname" autocomplete="off">
+                    </td>
+                    <td>
+                        <button type="button" width="300px" id="idDuplicate">중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input type="text" name="userName" id="userName" autocomplete="off">
+                    </td>
+                    <td id="checkName"></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td id="genderCheck">
+                        <label for="male">남<input type="radio" name="gender" id="male" width="100px"></label>
+                        <label for="female">여<input type="radio" name="gender" id="female"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>나이</td>
+                    <td>
+                        <input type="number" name="age" id="age" min="7" max="120">
+                    </td>
+                </tr>
+                <tr>
+                    <td>주소</td>
+                    <td colspan="3">
+                        <button id="searchAddress">주소 검색</button>
+                        <div id="addressResult"></div>
+                        상세 주소 : <input type="text" name="extraAdd" id="extraAdd" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td >취미</td>
+                    <td id="hobbyCheck" colspan="2">
+                        운동<input type="checkbox" name="hobby" id="sport">
+                        게임<input type="checkbox" name="hobby" id="game">
+                        독서<input type="checkbox" name="hobby" id="reading">
+                        음악감상<input type="checkbox" name="hobby" id="music"><br><br>
+                        그림<input type="checkbox" name="hobby" id="painting">
+                        여행<input type="checkbox" name="hobby" id="travel">
+                        기타<input type="checkbox" name="hobby" id="etc">
+                    </td>
+                </tr>
+                <tr>
+                    <td>직업</td>
+                    <td id="jobCheck">
+                        <select name="jobSelect" id="jobSelect">
+                            <option value="무직">무직</option>
+                            <option value="개발자">개발자</option>
+                            <option value="학생">학생</option>
+                            <option value="공무원">공무원</option>
+                            <option value="회계사">회계사</option>
+                            <option value="변호사">변호사</option>
+                            <option value="검사">검사</option>
+                            <option value="소방관">소방관</option>
+                            <option value="경찰관">경찰관</option>
+                            <option value="회사원">회사원</option>
+                            <option value="프리랜서">프리랜서</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="tel" name="phone" id="phone" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td>
+                        <input type="email" name="email" id="email" autocomplete="off">
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <section class="btnSubmit">
+                <button type="reset" id="resetBtn">초기화</button>
+                <button id="submitBtn">수정 완료</button>
+            </section>
+
+        </fieldset>
+
+    </form>
+    
+
+    <script src="../JS/ERSignIn.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</body>
+</html>

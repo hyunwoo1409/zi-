@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+
+}
+body {
+    width: 1920px;
+    height: 1080px;
+    margin: auto;
+    background-color: #f9f9f9; 
+    color: #333; 
+    display: flex;
+    flex-direction: column; 
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0px;
+    z-index: 900;
+    border-bottom: 1px solid #ddd;
+}
+/* 로고 이미지 */
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+header .logo img {
+    max-width: 100px;
+    height: auto;
+}
+/* 메인 텍스트 */
+header nav {
+    display: flex;
+    gap: 15px;
+}
+header nav a {
+    color: #333; 
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header nav a:hover {
+    color: skyblue; 
+}
+/* 로그인/회원가입 */
+.login {
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
+
+.login a {
+    color: skyblue;
+    text-decoration: none;
+    padding: 7px;
+}
+
+/* 메인 */
+main {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: 60px ; 
+    padding: 20px 40px; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px; 
+    text-align: left;
+    color: #333;
+}
+
+.divider {
+    border: none;
+    border-top: 3px solid black; 
+    margin: 50px 0; 
+    width: 100%; 
+}
+
+.main-class{
+    width: 70%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mypage-list{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #f2f2f2;
+}
+
+span{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-block;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6F0F4;
+    text-align: center;
+}
+
+#myprofile{
+    background-color: #65CCFF;
+    color: white;
+}
+
+
+
+/* 마이페이지 */
+.mypage-div{
+    display: flex;
+    justify-content: center;
+}
+
+.mypage-list2{
+    width: 45%;
+}
+
+.myProfileList>div{
+    display: flex; 
+    align-items: center;
+}
+
+.myProfileList p:first-child{
+    width: 100px;
+}
+
+.myProfileList p:last-child{
+    width: 400px;
+}
+
+.btn-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modify-myprofile{
+    margin-top: 30px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #65CCFF;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* footer */
+.footer {
+    background-color: #1e1e1e; 
+    color: #ccc;
+    font-size: 0.5em;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.footer-top {
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-top p {
+    margin: 0;
+    font-weight: bold;
+    color: skyblue;
+}
+
+.footer-top nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-top nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.6em;
+}
+
+.footer-top nav a:hover {
+    color: skyblue;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
+    position: relative; 
+}
+
+.footer-logo {
+    max-width: 100px; 
+    height: auto;
+    margin: 0 auto; 
+    display: block;
+}
+
+.footer-text {
+    text-align: reft;
+    position: absolute; 
+    right: 0;
+    max-width: 50%; 
+}
+
+.footer-text p {
+    margin: 5px 0;
+}
+
+.footer-text a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
